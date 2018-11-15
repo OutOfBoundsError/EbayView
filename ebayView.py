@@ -15,10 +15,8 @@ def view(prodUrl, index):
 def start(numView, productUrl):
     isDone = False
     while (isDone == False):
-        #threads = [] 
         for i in range(numView):
             t = Thread(target = view, args = (productUrl,i))
-            #threads.append(t)
             t.start()
             time.sleep(0.5)
         isDone=True
@@ -26,4 +24,5 @@ def start(numView, productUrl):
 def loopStart(numTimes, productUrl):
     for i in range(numTimes):
         view(productUrl)
+        
 start(100, 'https://www.ebay.com/itm/123481130583')
