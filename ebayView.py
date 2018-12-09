@@ -18,11 +18,13 @@ def start(numView, productUrl):
         for i in range(numView):
             t = Thread(target = view, args = (productUrl,i))
             t.start()
-            time.sleep(0.5)
+            time.sleep(0.1)
         isDone=True
         
 def loopStart(numTimes, productUrl):
     for i in range(numTimes):
         view(productUrl)
-        
-start(100, 'https://www.ebay.com/itm/123481130583')
+       
+    
+ebayLink = 'https://www.ebay.com/itm/#######' #Change this to your ebay item link
+start(100, ebayLink)
